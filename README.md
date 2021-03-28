@@ -2,13 +2,14 @@
 N2P is a toy I2P inspired router that runs directly on top of HTTPS, 
 as opposed to I2P, which runs directly on top of TCP and UDP.
 
-```
-Useful I2P links
-  [I2P Intro](https://geti2p.net/en/about/intro)
-  [Protocol Stack](https://geti2p.net/en/docs/protocol)
-  [Specification Documents](https://i2p.to/spec)
-  [Github Repo](https://github.com/i2p/i2p.i2p)
-```
+<pre>
+  Useful I2P links
+  <a href="https://geti2p.net/en/about/intro">I2P Intro</a>
+  <a href="https://geti2p.net/en/docs/protocol">Protocol Stack</a>
+  <a href="https://i2p.to/spec">Specification Documents</a>
+  <a href="https://github.com/i2p/i2p.i2p">Github Repo</a>
+</pre>
+
 
 ## Features
 - [] Read config file for settings
