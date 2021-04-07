@@ -84,7 +84,7 @@ public class App {
                 }
             } while(!cont);
             
-            cont = false;
+            
             do{
                 String prompt2 = "Set server port (443 default, 0-65353):";
                 System.out.print(prompt2);
@@ -93,13 +93,12 @@ public class App {
                 if ((0 <= cmd) && (cmd < 65354))
                 {
                     port = cmd;
-                    cont = true;
+                    break;
                 } else {
                     port = 443;
-                    cont = true;
+                    break;
                 }
-            } while(!cont);
-            cont = false;
+            } while(true);
             do{
                 String prompt3 = "Store connections in DB (0) YES, (1) NO:";
                 System.out.print(prompt3);
@@ -109,31 +108,29 @@ public class App {
                 {
                     case 0:
                         storeCS = true;
-                        cont = true;
+                        break;
                     case 1:
                         storeCS = false;
-                        cont = true;
+                        break;
                     default:
                         cont = false;
                 }
-            } while(!cont);
-            cont = false;
-            do{
-                String prompt4 = "Set client host (default: google.com, should have HTTPS/TLS/SSL):";
-                System.out.print(prompt4);
-                String cmdHost = sc.next();
-                dummyHost = cmdHost;
-                cont = true;
-            } while(!cont);
+            } while(true);
+
+            String prompt4 = "Set client host (default: google.com, should have HTTPS/TLS/SSL):";
+            System.out.print(prompt4);
+            String cmdHost = sc.next();
+            dummyHost = cmdHost;
+        
             Router router = new Router();
             router.runRouter();
             do{
-                String prompt4 = "Press 'q' to quit:";
-                System.out.print(prompt4);
+                String prompt5 = "Press 'q' to quit:";
+                System.out.print(prompt5);
                 String cmdStr = sc.next();
                 if (cmdStr.equals("q"))
-                    cont = true;
-            } while(!cont);
+                    break;
+            } while(true);
             sc.close();
             if(store()) {
                 List<RouterInfo> ris = DatabaseManager.getAllRouterInfo();
