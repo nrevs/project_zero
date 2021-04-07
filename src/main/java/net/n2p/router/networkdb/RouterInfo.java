@@ -74,7 +74,6 @@ public class RouterInfo {
                 if(App.debug()) {ioE.printStackTrace();}
             }
         } 
-
     }
 
     public X509Certificate getCert() {

@@ -103,4 +103,8 @@ public class HttpsManager {
         }
     }
 
+
+    public void stop() {
+        this._server.stop(4);
+    }
 }

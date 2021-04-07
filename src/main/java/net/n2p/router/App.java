@@ -13,7 +13,6 @@ import java.util.Scanner;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-import net.n2p.router.networkdb.Address;
 import net.n2p.router.networkdb.RouterInfo;
 
 public class App {
@@ -47,6 +46,7 @@ public class App {
     private static String dummyHost = "google.com";
     private static boolean dummy = false;
     
+    private static Router _router;
 
 
     public static void main(String[] args) {
@@ -99,6 +99,7 @@ public class App {
                     break;
                 }
             } while(true);
+            cont = false;
             do{
                 String prompt3 = "Store connections in DB (0) YES, (1) NO:";
                 System.out.print(prompt3);
@@ -108,27 +109,30 @@ public class App {
                 {
                     case 0:
                         storeCS = true;
+                        cont = true;
                         break;
                     case 1:
                         storeCS = false;
+                        cont = true;
                         break;
                     default:
                         cont = false;
                 }
-            } while(true);
+            } while(!cont);
 
             String prompt4 = "Set client host (default: google.com, should have HTTPS/TLS/SSL):";
             System.out.print(prompt4);
             String cmdHost = sc.next();
             dummyHost = cmdHost;
         
-            Router router = new Router();
-            router.runRouter();
+            _router = new Router();
+            _router.runRouter();
             do{
                 String prompt5 = "Press 'q' to quit:";
                 System.out.print(prompt5);
                 String cmdStr = sc.next();
                 if (cmdStr.equals("q"))
+                    _router.stop();
                     break;
             } while(true);
             sc.close();
@@ -152,8 +156,8 @@ public class App {
         } else {
             System.out.println("NO! RUNNING IN NORMAL MODE **********************************");
             System.out.println("Try browsing to https://localhost.443");
-            Router router = new Router();
-            router.runRouter();
+            _router = new Router();
+            _router.runRouter();
             
         }
 

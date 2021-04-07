@@ -48,4 +48,9 @@ public class Router {
         this._httpsManager.start();
     }
 
+    public void stop() {
+        this._httpsManager.stop();
+    }
+
+
 }
