@@ -17,7 +17,7 @@ public class DatabaseManager {
     private static RouterInfoDAO _riDao;
 
     public DatabaseManager() {
-        String url = "jdbc:postgresql://localhost:5432/sqldemo";
+        String url = "jdbc:postgresql://localhost:5432/projzero";
         String username = "projzero";
         String password = "projzero";
 
