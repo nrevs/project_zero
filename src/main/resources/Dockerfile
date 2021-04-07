@@ -1,5 +1,5 @@
 
-FROM postgres
+FROM postgres:10
 ENV POSTGRES_USER projzero
 ENV POSTGRES_PASSWORD projzero
 ADD schema.sql /docker-entrypoint-initdb.d
