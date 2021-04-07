@@ -6,17 +6,35 @@
  * user guide available at https://docs.gradle.org/4.4.1/userguide/tutorial_java_projects.html
  */
 
+
+
+
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 
 // Apply the application plugin to add support for building an application
 apply plugin: 'application'
 
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    'https://plugins.gradle.org/m2'
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'net.n2p.router.App'
+
+    }
+    //from {
+    //    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    //}
 }
 
 dependencies {
@@ -25,8 +43,21 @@ dependencies {
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+
+
+    //compile files('libs/bcpkix-jdk15on-160.jar')
+    //compile files('libs/bcprov-jdk15on-160.jar')
+    compile 'org.bouncycastle:bcpkix-jdk15on:1.60'
+    //compile 'org.bouncycastle:bcprov-jdk15on:1.60'
+    //implementation 'org.bouncycastle:bcpkix-jdk15on:1.60'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.60'
+    //runtime 'org.bouncycastle:bcpkix-jdk15on:1.60'
+    //runtime 'org.bouncycastle:bcprov-jdk15on:1.60'
+
 }
 
-// Define the main class for the application
-mainClassName = 'App'
 
+// Define the main class for the application
+mainClassName = 'net.n2p.router.App'
+
+//apply plugin: 'com.palantir.docker-compose' version '0.26.0'

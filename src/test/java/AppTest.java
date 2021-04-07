@@ -3,6 +3,7 @@
  */
 import org.junit.Test;
 import static org.junit.Assert.*;
+import net.n2p.router.*;
 
 public class AppTest {
     @Test public void testAppHasAGreeting() {

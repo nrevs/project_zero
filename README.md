@@ -1,6 +1,11 @@
 # project_zero - N2P  ***!DOES NOT RUN YET!***
-N2P is a toy I2P inspired router that runs directly on top of HTTPS, 
-as opposed to I2P, which runs directly on top of TCP and UDP.
+
+N2P is a stub project aspiring to be a toy I2P inspired router running directly on top of HTTPS, as opposed to I2P, which runs directly on top of TCP and UDP. The current status of the project is that it starts a Server and a Client and offers two handlers, a ServerHandler and a ClientHandler that need to be wired up to process the incoming and outgoing connections. To have a little fun, it runs a little demo if you type "dummy" in the command arguments and it can send some information to a database you can start with docker (in the resources folder) and and print the info when you're done. There is a long way to go, but baby steps.
+
+Some things to keep in mind:
+- Uses BouncyCastle and requires setting up the BouncyCastle provider (annoying!)
+  (please see this guide: 
+- Look in the runScript.sh for how to start the project. It is complicated by the inclusion of signed BouncyCastle jars. They're needed for generating the Certificates :P
 
 <pre>
   Useful I2P links
@@ -18,10 +23,4 @@ as opposed to I2P, which runs directly on top of TCP and UDP.
 
 
 ## Features
-- [] Read config file for settings
-- [] Connection to "anonymous" *.n2p sites, default target port 8080, accessible via a localhost port (default: 4544 HTTP)
-- [] Generic "anonymous" peer-to-peer communication via a locahost port (default: 7756)
-
-
-
-
+- [] Https Server and Client with ServerHandler and ClientHandler to "handle" connections.

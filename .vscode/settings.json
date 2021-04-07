@@ -1,0 +1,8 @@
+{
+
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    "workbench.activityBar.visible": true
+}

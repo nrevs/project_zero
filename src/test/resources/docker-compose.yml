@@ -1,0 +1,17 @@
+version: '3'
+services:
+  server-test-1:
+    build: .
+    ports:
+      - "5001:5001"
+    container_name: server-test-1
+  server-test-2:
+    build: .
+    ports:
+      - "5002:5002"
+    container_name: server-test-2
+  server-test-3:
+    build: .
+    ports:
+      - "5003:5003"
+    container_name: server-test-3
