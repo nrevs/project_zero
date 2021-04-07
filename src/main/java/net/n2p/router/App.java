@@ -155,6 +155,8 @@ public class App {
         } else {
             System.out.println("NO! RUNNING IN NORMAL MODE **********************************");
             System.out.println("Try browsing to https://localhost.443");
+            Router router = new Router();
+            router.runRouter();
             
         }
 
