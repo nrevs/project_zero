@@ -4,7 +4,7 @@ N2P is a stub project aspiring to be a toy I2P inspired router running directly 
 
 Some things to keep in mind:
 - Uses BouncyCastle and requires setting up the BouncyCastle provider (annoying!)
-  (please see this guide: 
+  (please see this guide: https://docs.oracle.com/cd/E19830-01/819-4712/ablsc/index.html)
 - Look in the runScript.sh for how to start the project. It is complicated by the inclusion of signed BouncyCastle jars. They're needed for generating the Certificates :P
 
 <pre>
