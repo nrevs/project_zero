@@ -10,6 +10,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.cert.X509Certificate;
 
+import net.n2p.router.App;
 import net.n2p.router.CryptoManager;
 
 public class RouterInfo {
@@ -28,7 +29,7 @@ public class RouterInfo {
             makeCertFromBytes(cert);
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            if(App.debug()) {e.printStackTrace();}
         }
         _hash = hash;
     }
@@ -44,12 +45,12 @@ public class RouterInfo {
             certBytes = bos.toByteArray();
 
         } catch (IOException ioE) {
-            ioE.printStackTrace();
+            if(App.debug()) {ioE.printStackTrace();}
         }finally {
             try {
                 bos.close();
             } catch (IOException ioE) {
-                ioE.printStackTrace();
+                if(App.debug()) {ioE.printStackTrace();}
             }
         }
         return certBytes;
@@ -63,14 +64,14 @@ public class RouterInfo {
             in = new ObjectInputStream(bis);
             X509Certificate _cert = (X509Certificate) in.readObject();
         } catch(IOException ioE) {
-            ioE.printStackTrace();
+            if(App.debug()) {ioE.printStackTrace();}
         } finally {
             try {
                 if(in != null) {
                     in.close();
                 }
             } catch (IOException ioE) {
-                ioE.printStackTrace();
+                if(App.debug()) {ioE.printStackTrace();}
             }
         } 
 

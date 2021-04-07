@@ -28,13 +28,13 @@ public class Router {
         } catch (KeyStoreException | NoSuchAlgorithmException | OperatorCreationException | CertificateException
                 | IOException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            if(App.debug()) {e.printStackTrace();}
         } catch (NoSuchProviderException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            if(App.debug()) {e.printStackTrace();}
         } catch (InvalidAlgorithmParameterException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            if(App.debug()) {e.printStackTrace();}
         }
 
         

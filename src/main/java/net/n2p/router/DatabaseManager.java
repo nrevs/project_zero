@@ -16,7 +16,11 @@ public class DatabaseManager {
     private static AddressDAO _aDao;
     private static RouterInfoDAO _riDao;
 
+    
+
+
     public DatabaseManager() {
+        
         String url = "jdbc:postgresql://localhost:5432/projzero";
         String username = "projzero";
         String password = "projzero";
@@ -28,7 +32,7 @@ public class DatabaseManager {
 
         } catch (SQLException e) {
             // logger
-            e.printStackTrace();
+            if(App.debug()) {e.printStackTrace();}
         }
     }
 

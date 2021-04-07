@@ -55,13 +55,13 @@ public class CryptoManager {
             if(App.debug()) {System.out.println("....");}
         } catch (IOException ioE) {
             // logger
-            ioE.printStackTrace();
+            if(App.debug()) {ioE.printStackTrace();}
         } catch (NoSuchAlgorithmException nsaE) {
             // logger
-            nsaE.printStackTrace();
+            if(App.debug()) {nsaE.printStackTrace();}
         } catch (CertificateException cE) {
             // logger
-            cE.printStackTrace();
+            if(App.debug()) {cE.printStackTrace();}
         }
         
     }

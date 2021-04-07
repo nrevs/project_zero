@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.n2p.router.App;
+
 public class RouterInfoDAO {
     Connection connection;
 
@@ -26,7 +28,7 @@ public class RouterInfoDAO {
             pStatement1.setBytes(2, ri.getCertBytes());
             pStatement1.executeUpdate();
         } catch(SQLException sqE) {
-            sqE.printStackTrace();
+            if(App.debug()) {sqE.printStackTrace();}
         }
     }
 
@@ -40,7 +42,7 @@ public class RouterInfoDAO {
             RouterInfo ri = new RouterInfo(rs.getBytes("hash"), rs.getBytes("cert"));
             return ri;
         } catch (SQLException sqE) {
-            sqE.printStackTrace();
+            if(App.debug()) {sqE.printStackTrace();}
             return null;
         }
     }
@@ -57,7 +59,7 @@ public class RouterInfoDAO {
                 ris.add(ri);
             }
         } catch (SQLException sqE) {
-            sqE.printStackTrace();
+            if(App.debug()) {sqE.printStackTrace();}
         }
         return ris;
     }
